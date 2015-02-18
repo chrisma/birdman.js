@@ -1,10 +1,10 @@
 # birdman.js
-Jquery plugin to animate text as in the credits of the 2014 movie "Birdman".<br>
+A JQuery plugin to animate text as in the credits of the 2014 movie "Birdman".<br>
 See it in action at [chrisma.github.io/birdman.js](http://chrisma.github.io/birdman.js/)
 
 ![asdf](http://hackedofffilms.com/wp-content/uploads/2015/01/birdman-typo-3.gif)
 
-And yes, I'm aware that Birdman was [not the first movie](http://hackedofffilms.com/typecast-birdmans-typography/) to use this effect, but the name is so nice.
+I'm aware that Birdman was [not the first movie](http://hackedofffilms.com/typecast-birdmans-typography/) to use this effect, but the name is so nice.
 
 # Setup
 * Include JQuery
