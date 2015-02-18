@@ -18,7 +18,7 @@
 
 	function escape(str) {
 		// avoids double encoding &amp; See comments from http://css-tricks.com/snippets/javascript/htmlentities-for-javascript/
-		return String(str).replace(/&amp;/g, '&').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+		return String(str).replace(/&amp;/g, '&').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, 'quot');
 	}
 
 	var methods = {
@@ -81,10 +81,11 @@
 		params.method = defaultFor(params.method, 'letters');
 		var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 		var capitalAlphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-		var specialChars = ['-','+','*','_','~','<','>','|','.','?','!', '§','$','%','&','/','(',')','[',']','{','}','='];
-		var combinedAlphabet = zip(alphabet, capitalAlphabet).concat([specialChars]);
+		var numbers = ['0','1','2','3','4','5','6','7','8','9'];
+		var specialChars = ['-','+','*','_','~','<','>','|','.','?','!', '§','$','%','&','quot','/','(',')','[',']','{','}','='];
+		var combinedAlphabet = zip(alphabet, capitalAlphabet).concat(numbers).concat([specialChars]);
 		params.order = defaultFor(params.order, combinedAlphabet);
-		params.delay = defaultFor(params.delay, 200);
+		params.delay = defaultFor(params.delay, 150);
 		params.speedUp = defaultFor(params.speedUp, true);
 
 		/*
@@ -111,19 +112,17 @@
 			});
 			if ($spans.length>0) result.push($spans)
 		})
-		
-		// Animate the different groups, decreasing delay for later groups
+
+		// Animate the different groups
 		var delay = params.delay;
 		result.forEach(function(element, index, array){
 			if (params.speedUp) {
 				var increment = (params.delay/2)-(((params.delay/2)/(result.length-1))*index);
 				delay += increment;
-				console.log(delay);
-				setTimeout(show.bind(undefined, element), delay);
 			} else {
-				console.log(params.delay*index);
-				setTimeout(show.bind(undefined, element), params.delay*index);
+				delay = params.delay*index
 			}
+			setTimeout(show.bind(undefined, element), delay);
 		});
 
 		function show($array) {

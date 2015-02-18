@@ -1,20 +1,61 @@
 body {
-	width: 750px;
+	width: 1000px;
 	margin: auto;
 	text-align: center;
 	background-color: black;
 	color: red;
+	font-family: 'BenchNine', sans-serif;
+	font-weight: 700;
 }
 
-p.birdman-demo {
+div.wrap {
 	font-size: 35px;
+	letter-spacing: 10px;
+}
+
+h1 {
+	font-size: 6em;
+}
+
+.largerSpace span[data-letters=" "] {
+	display: inline-block;
+	width: 26px;
+}
+
+
+.largestSpace span[data-letters=" "] {
+	display: inline-block;
+	width: 43px;
+}
+
+div.button {
+	border: red 1px solid;
+	width: 225px;
+	margin: auto;
+	display: none;
+	margin-top: 75px;
+}
+
+.button:hover, .button:focus {
+	background-color: red;
+	color: black;
+}
+
+#GithubRibbon {
+	position: absolute;
+	top: 0; right: 0;
+	border: 0;"
 }
 
 /* Default link styling */
-a:link { color:#0271fb; }
-a:visited { color:#bd02fb; }
-a:hover, a:focus { color:#000; }
-a:active { color:#fb0e02; }
+a:link {
+	color:red;
+	text-decoration: none;
+}
+
+a:visited {
+	color: red;
+}
 
 /* Print styles */
 @media print {

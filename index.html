@@ -3,26 +3,35 @@
 <head>
 	<meta charset="utf-8">
 	<title>Birdman.js</title>
-	<meta name="description" content="TODO">
+	<meta name="description" content="birdman.js: JQuery plugin creating the text animation used in the credits of the 2015 movie Birdman.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="lib/normalize.css" rel="stylesheet" media="all">
 	<link href="styles.css" rel="stylesheet" media="all">
+	<link href='http://fonts.googleapis.com/css?family=BenchNine:700' rel='stylesheet' type='text/css'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="birdman.js"></script>
 </head>
 <body>
 	<!-- ARIA: the landmark role "banner" is set as it is the prime heading or internal title of the page --> 
 	<header role="banner">
-		<h1>Birdman.js</h1>
+		<h1>BIRDMAN.JS</h1>
 	</header>
+	
+	<!-- Github Ribbon -->
+	<a href="https://github.com/chrisma/birdman.js"><img id="GithubRibbon" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
 	
 	<div class="wrap">
 		<!-- ARIA: the landmark role "main" is added here as it contains the main content of the document, and it is recommended to add it to the
 		<main> element until user agents implement the required role mapping. -->
 		<main role="main">
-			<p class="birdman-demo">Bacon ipsum dolor &lt; alcatra &gt; laborum!<br>Bacon ipsum dolor &lt; alcatra &gt; laborum!</p>
-			<p class="birdman-demo">Dolore pork belly? Tri-tip ham venison beef ribs.</p>
+			<p class="birdman">BIRDMAN.JS IS A JQUERY PLUGIN</p>
+			<p class="birdman">THAT CREATES THE ANIMATION OF</p>
+			<p class="birdman largerSpace">TEXT USED IN THE CREDITS OF</p>
+			<p class="birdman largestSpace">THE 2015 MOVIE &quot;BIRDMAN&quot;.</p>
 		</main>
+
+		<a href="javascript:$('.birdman').birdman({speedUp:false});void(0);"><div class="button" id="again">AGAIN</div></a>
+		<a href="http://www.github.com/chrisma/birdman.js"><div class="button" id="github">GITHUB</div></a>
 	</div>
 	
 	<!-- The main page footer can contain items such as copyright and contact information. -->
@@ -32,7 +41,11 @@
 	</footer>
 
 	<script type="text/javascript">
-		$('.birdman-demo').birdman({speedUp:true});
+		$('.birdman').birdman({speedUp:false});
+		setTimeout(function(){
+			$('#again').fadeIn();
+			$('#github').fadeIn();
+		}, 4500);
 	</script>
 </body>
 </html>
