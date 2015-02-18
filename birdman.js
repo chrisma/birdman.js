@@ -66,13 +66,17 @@
 (function($){
 
 	$.fn.birdman = function(params) {
-		/* Argument Check */
+		/*
+		* Argument Check
+		*/
 		if (arguments.length > 1) {
 			$.error( 'Please pass in arguments as a single object.' );
 			return this;
 		}
 
-		/* Default Parameters */
+		/*
+		* Default Parameters
+		*/
 		if ( !params ) params = {};
 		params.method = defaultFor(params.method, 'letters');
 		var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -81,39 +85,60 @@
 		var combinedAlphabet = zip(alphabet, capitalAlphabet).concat([specialChars]);
 		params.order = defaultFor(params.order, combinedAlphabet);
 		params.delay = defaultFor(params.delay, 200);
+		params.speedUp = defaultFor(params.speedUp, true);
 
-		/* Setup */
+		/*
+		* Setup
+		*/
 		$(this).lettering(params.method);
 		$(this).children('span.lettering').css('visibility','hidden');
 
-		/* Main */
-		i = 0;
+		/*
+		* Main
+		*/
+		// Gather all spans for each group of characters that should be animated together
+		// e.g. ['a','A']
+		result = [];
 		that = $(this);
 		params.order.forEach(function(element, index, array){
-			var $result = $([]);
 			if ( typeof element === 'string' ){
 				element = Array(element);
 			}
+			var $spans = $([]);
 			element.forEach(function(part, index, array){
-				var $span = that.children('span.lettering[data-'+ params.method +'="'+ part +'"]');
-				$result = $result.add($span);
+				var $partSpan = that.children('span.lettering[data-'+ params.method +'="'+ part +'"]');
+				$spans = $spans.add($partSpan);
 			});
-			if ( $result.length>0 ) {
-				i += 1;
-				setTimeout(show.bind(undefined, $result), params.delay*i);
-			}
+			if ($spans.length>0) result.push($spans)
 		})
+		
+		// Animate the different groups, decreasing delay for later groups
+		var delay = params.delay;
+		result.forEach(function(element, index, array){
+			if (params.speedUp) {
+				var increment = (params.delay/2)-(((params.delay/2)/(result.length-1))*index);
+				delay += increment;
+				console.log(delay);
+				setTimeout(show.bind(undefined, element), delay);
+			} else {
+				console.log(params.delay*index);
+				setTimeout(show.bind(undefined, element), params.delay*index);
+			}
+		});
 
 		function show($array) {
 			//Jquery's fadeIn() changes the display property, not the visibility
 			$array.css('visibility','visible').hide().fadeIn();
 		}
 
-		/* Utility functions */
+		/* 
+		* Utility functions
+		*/
 		function defaultFor(arg, val) {
 			return typeof arg !== 'undefined' ? arg : val;
 		}
 
+		//http://stackoverflow.com/questions/4856717/javascript-equivalent-of-pythons-zip-function
 		function zip() {
 			var args = [].slice.call(arguments);
 			var shortest = args.length==0 ? [] : args.reduce(function(a,b){
