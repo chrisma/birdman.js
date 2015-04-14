@@ -6,6 +6,8 @@ See it in action at [chrisma.github.io/birdman.js](http://chrisma.github.io/bird
 
 I'm aware that Birdman was [not the first movie](http://hackedofffilms.com/typecast-birdmans-typography/) to use this effect, but the name is so nice.
 
+Demos for `'words'` and `'lines'` methods are [here](the https://jsfiddle.net/1bLo8bc0/).
+
 # Setup
 * Include JQuery
 ```html
