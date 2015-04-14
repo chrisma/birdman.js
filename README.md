@@ -23,6 +23,6 @@ $('.birdman').birdman();
 # Configuration
 The `birdman` function takes an object with configuration options. Supported are:
 * `method`: The method used to split the text. **Default** is `'letters'`. Other options are `'words'` and `'lines'`.
-* `order`: An array deciding the order in which parts are animated, e.g. `['a','b','c',...]`, if more than one part is supposed to be animated at the same time, put them in a separate array, e.g. `[['a','A'],['b','B'],...]`. **Default** is case insensitive alphabetical order.
+* `order`: An array deciding the order in which parts are animated, e.g. `['a','b','c',...]`, if more than one part is supposed to be animated at the same time, put them in a separate array, e.g. `[['a','A'],['b','B'],...]`. **Default** is case insensitive alphabetical order (for the `'letters'` method). For `'words'` and `'lines'` there is no default and this must be set for birdman.js to work.
 * `delay`: The amount of milliseconds between each animation. **Dafault** is `150`.
 * `speedUp`: Boolean indicating whether the animation should become faster towards the end. **Default** is `false`.
