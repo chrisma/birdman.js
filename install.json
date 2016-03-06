@@ -1,0 +1,51 @@
+{
+  "resources": {
+    "body": [
+      {
+        "type": "script",
+        "src": "install.js"
+      }
+    ]
+  },
+  "options": {
+    "properties": {
+      "location": {
+        "order": 1,
+        "title": "Location",
+        "type": "string",
+        "format": "selector",
+        "description": "Select the text that you would like to animate birdman-style."
+      },
+      "advanced":{
+        "order": 10,
+        "title": "Optional parameters",
+        "type": "object",
+        "properties": {
+          "delay": {
+            "order": 11,
+            "title": "Animation speed",
+            "type": "string",
+            "description": "The speed at which letters are shown.",
+            "enum": [
+              "150",
+              "300",
+              "600"
+            ],
+            "enumNames": {
+              "150": "fast",
+              "300": "normal",
+              "600": "slow"
+            },
+            "default": "300"
+          },
+          "speedUp": {
+            "order": 12,
+            "title": "Speed up",
+            "description": "Whether the animation should become faster towards the end.",
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}
