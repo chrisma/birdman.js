@@ -3,9 +3,31 @@
     "body": [
       {
         "type": "script",
-        "src": "install.js"
+        "src": "birdman.js",
+        "moduleType": "global",
+        "exports": [
+          "jQuery"
+        ],
+        "depends": {
+          "github.com/jquery/jquery:jquery.js": "jQuery"
+        }
+      },
+      {
+        "type": "script",
+        "src": "install.js",
+        "moduleType": "global",
+        "depends": {
+          "github.com/jquery/jquery:jquery.js": "jQuery"
+        }
+      },
+      {
+        "type": "script",
+        "contents": "EagerBirdman(INSTALL_OPTIONS)"
       }
     ]
+  },
+  "dependencies": {
+    "github.com/jquery/jquery": ">= 1.7.0, <= 1.10.2"
   },
   "options": {
     "properties": {
@@ -32,9 +54,9 @@
               "600"
             ],
             "enumNames": {
-              "150": "fast",
-              "300": "normal",
-              "600": "slow"
+              "150": "Fast",
+              "300": "Normal",
+              "600": "Slow"
             },
             "default": "300"
           },
