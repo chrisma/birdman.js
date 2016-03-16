@@ -32,9 +32,9 @@
               "600"
             ],
             "enumNames": {
-              "150": "fast",
-              "300": "normal",
-              "600": "slow"
+              "150": "Fast",
+              "300": "Normal",
+              "600": "Slow"
             },
             "default": "300"
           },
