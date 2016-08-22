@@ -9,14 +9,18 @@ I'm aware that Birdman was [not the first movie](https://web.archive.org/web/201
 Demos for `'words'` and `'lines'` methods are [here](https://jsfiddle.net/1bLo8bc0/).
 
 # Setup
-* Include JQuery
+* Include JQuery (if you haven't already)
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 ```
-* Download the [birdman.js](https://raw.githubusercontent.com/chrisma/birdman.js/gh-pages/birdman.js) file and include it
+* Download the [birdman.js](https://raw.githubusercontent.com/chrisma/birdman.js/gh-pages/birdman.js) file and serve it locally *OR* load it from a CDN:
 ```html
+<!-- Local -->
 <script src="birdman.js"></script>
+<!-- or CDN -->
+<script src="https://cdn.rawgit.com/chrisma/birdman.js/gh-pages/birdman.js"></script>
 ```
+
 * Initialize the plugin on the content you want birdmanned. This works with any styling.
 ```javascript
 $('.birdman').birdman();
