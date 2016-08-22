@@ -4,7 +4,7 @@ See it in action at [chrisma.github.io/birdman.js](http://chrisma.github.io/bird
 
 ![asdf](http://hackedofffilms.com/wp-content/uploads/2015/01/birdman-typo-3.gif)
 
-I'm aware that Birdman was [not the first movie](http://hackedofffilms.com/typecast-birdmans-typography/) to use this effect, but the name is so nice.
+I'm aware that Birdman was [not the first movie](https://web.archive.org/web/20150404095221/http://hackedofffilms.com/typecast-birdmans-typography/) to use this effect, but the name is so nice.
 
 Demos for `'words'` and `'lines'` methods are [here](https://jsfiddle.net/1bLo8bc0/).
 
