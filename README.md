@@ -2,7 +2,7 @@
 A JQuery plugin to animate text as in the credits of the 2014 movie "Birdman".<br>
 See it in action at [chrisma.github.io/birdman.js](http://chrisma.github.io/birdman.js/)
 
-![asdf](http://hackedofffilms.com/wp-content/uploads/2015/01/birdman-typo-3.gif)
+![Gif of original animation](https://web.archive.org/web/20170221001046if_/http://hackedofffilms.com/wp-content/uploads/2015/01/birdman-typo-3.gif)
 
 I'm aware that Birdman was [not the first movie](https://web.archive.org/web/20150404095221/http://hackedofffilms.com/typecast-birdmans-typography/) to use this effect, but the name is so nice.
 
